@@ -1,6 +1,9 @@
 ---
 - name: Dump all
   hosts: localhost
-  gather_facts: false
+  gather_facts: true
   tasks:
-    - debug: var=vars
+    - name: Dump ansible vars 
+      debug: var=vars
+    - name: Dump env variables
+      debug: var=ansible_env
